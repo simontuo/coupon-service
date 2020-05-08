@@ -38,7 +38,7 @@ class GoodsController extends Controller
             ->when(isset($query->key) && $query->key, function ($sql) use ($query) {
                 $sql->where('name', 'like', "%" . $query->key . '%');
             })
-            ->when(isset($query->level_1_category) && $query->key, function ($sql) use ($query) {
+            ->when(isset($query->level_1_category) && $query->level_1_category, function ($sql) use ($query) {
                 $sql->where('level_1_category', 'like', "%" . $query->level_1_category . '%');
             });
 
